@@ -1,0 +1,46 @@
+.recipe {
+    width: 100%;
+    padding: 10px 30px;
+    color: gray;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    cursor: pointer;
+}
+
+.recipe:hover {
+    background-color: rgba(255, 251, 249, 0.91);
+}
+
+.foodImgContainer {
+    height: 100%;
+
+}
+
+.foodImg {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+}
+
+.textContainer {
+    padding: 0 25px;
+    text-transform: uppercase;
+}
+
+.textContainer > p {
+    margin: 8px;
+}
+
+.shortTitle {
+    font-size: 13px;
+    font-weight: bold;
+    color: #f69c84;
+}
+
+.shortDescription {
+
+}

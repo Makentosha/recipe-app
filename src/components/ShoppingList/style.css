@@ -1,0 +1,30 @@
+.shopping-list {
+    margin: 15px 0;
+    color: #f69c84;
+    font-weight: bold;
+}
+
+.shopping-list-item {
+    padding: 9px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-list-item:hover .icon {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.icon {
+    visibility: hidden;
+    margin: 0 7px;
+    font-size: 12px;
+}
+
+.danger {
+    color: gray;
+}
+
+.danger:hover {
+    color: #cb0700;
+}

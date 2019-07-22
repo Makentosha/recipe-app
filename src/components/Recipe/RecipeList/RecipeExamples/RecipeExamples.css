@@ -1,0 +1,18 @@
+.heading {
+    padding: 0 42px;
+    color: #b1b1b1;
+}
+
+.recipes {
+    list-style-type: none;
+    color: #f59783;
+}
+
+.recipes > li {
+    margin: 5px 17px;
+}
+
+.recipes > li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

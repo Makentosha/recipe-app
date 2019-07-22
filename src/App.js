@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainContainer from "./layout/MainContainer";
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://www.food2fork.com/api/';
+
+axios.interceptors.response.use((res) => {
+  if (res.data.error === 'limit') {
+    throw new Error('The limit was past. Change the keys order in the \'src/config/api.js\'');
+  }
+
+  return res;
+});
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <MainContainer></MainContainer>;
 }
 
 export default App;
