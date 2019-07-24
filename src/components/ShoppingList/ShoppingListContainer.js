@@ -1,34 +1,42 @@
 import React from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPen, faMinus, faPlus, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {
+  faPen,
+  faMinus,
+  faPlus,
+  faTimes
+} from '@fortawesome/free-solid-svg-icons';
 
 import style from './style.css';
 
 class ShoppingListContainer extends React.Component {
-  state = {
-    shoppingList: [
-      {
-        amount: 10,
-        x: '',
-        ingredient: 'Eggs'
-      },
-      {
-        amount: 2,
-        x: '(packs)',
-        ingredient: 'Sour cream'
-      },
-      {
-        amount: 1,
-        x: '(pack)',
-        ingredient: 'Milk'
-      },
-      {
-        amount: 2,
-        x: '',
-        ingredient: 'Bread'
-      }
-    ]
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      shoppingList: [
+        {
+          amount: 10,
+          x: '',
+          ingredient: 'Eggs'
+        },
+        {
+          amount: 2,
+          x: '(packs)',
+          ingredient: 'Sour cream'
+        },
+        {
+          amount: 1,
+          x: '(pack)',
+          ingredient: 'Milk'
+        },
+        {
+          amount: 2,
+          x: '',
+          ingredient: 'Bread'
+        }
+      ]
+    };
+  }
 
   onRemove(index) {
     this.setState((prevState) => {
@@ -37,9 +45,10 @@ class ShoppingListContainer extends React.Component {
 
       return {
         shoppingList: listClone
-      }
-    })
+      };
+    });
   }
+
   render() {
     return (
       <React.Fragment>
@@ -69,20 +78,11 @@ class ShoppingListContainer extends React.Component {
                     onClick={() => this.onRemove(index)}/>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
-
-
-
-        <ul>
-          {/*<li>li</li>*/}
-          {/*<li>li</li>*/}
-          {/*<li>li</li>*/}
-        </ul>
-        {/*<ShoppingForm />*/}
       </React.Fragment>
-    )
+    );
   }
 }
 

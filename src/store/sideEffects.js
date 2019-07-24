@@ -1,5 +1,6 @@
 import * as recipeActions from './actions';
-import {getRecipeDetails, getRecipes} from "../services/service";
+
+import {getRecipeDetails, getRecipes} from '../services/service';
 
 export const fetchRecipeList = (payload) => {
   return dispatch => {
@@ -13,7 +14,7 @@ export const fetchRecipeList = (payload) => {
         dispatch(recipeActions.getRecipeListError(error));
         console.log(error);
       });
-  }
+  };
 };
 
 export const fetchRecipeDetails = (payload) => {
@@ -27,6 +28,6 @@ export const fetchRecipeDetails = (payload) => {
       .catch(error => {
         dispatch(recipeActions.getRecipeDetailsError());
         console.log(error);
-      })
-  }
+      });
+  };
 };

@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import MainContainer from "./layout/MainContainer";
 import axios from 'axios';
+
+import MainContainer from './layout/MainContainer';
 
 axios.defaults.baseURL = 'https://www.food2fork.com/api/';
 
@@ -14,7 +15,7 @@ axios.interceptors.response.use((res) => {
 });
 
 function App() {
-  return <MainContainer></MainContainer>;
+  return <MainContainer />;
 }
 
 export default App;

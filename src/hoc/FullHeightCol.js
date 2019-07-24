@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const fullHeightCol = (props) => {
   const widthClass = {
@@ -12,7 +13,12 @@ const fullHeightCol = (props) => {
     <div style={widthClass}>
       {props.children}
     </div>
-  )
+  );
+};
+
+fullHeightCol.propTypes = {
+  flexGrow: PropTypes.number,
+  children: PropTypes.object
 };
 
 export default fullHeightCol;

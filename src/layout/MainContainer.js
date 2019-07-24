@@ -1,53 +1,59 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import styles from './MainContainer.css';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-import FullWidthCol from '../hoc/FullHeightCol';
+import FullHeightCol from '../hoc/FullHeightCol';
 import Keys from '../context/context';
 import * as recipeSelectors from '../store/selectors';
-import RecipeListContainer from "../components/Recipe/RecipeList/RecipeListContainer";
-import Spinner from '../SharedComponents/Spinner/Spinner';
+import RecipeListContainer from '../components/Recipe/RecipeList/RecipeListContainer';
 import ShoppingListContainer from '../components/ShoppingList/ShoppingListContainer';
-
-const LazyRecipeDetails = React.lazy(() => import('../components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer'));
+import RecipeDetailsContainer
+  from '../components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer';
 
 class MainContainer extends React.Component {
+  recipeDetailsComponent() {
+    if (this.props.isRecipeSelected) {
+      return <RecipeDetailsContainer
+        title="pizza"
+        recipeDetails={this.props.selectedRecipeDetails}/>;
+    }
+
+    return <div/>;
+  }
 
   render() {
-    const RecipeDetailsC = this.props.selectedRecipeDetails
-      ? <Suspense fallback={<Spinner/>}>
-        <LazyRecipeDetails
-          title="pizza"
-          recipeDetails={this.props.isRecipeSelected}/>
-      </Suspense>
-      : null;
-
     return (
       <div className={styles['main-container']}>
-        <FullWidthCol flexGrow={1}>
+        <FullHeightCol flexGrow={1}>
           <Keys.Provider value={this.state}>
             <RecipeListContainer/>
           </Keys.Provider>
-        </FullWidthCol>
+        </FullHeightCol>
 
-        <FullWidthCol flexGrow={2}>
-          {RecipeDetailsC}
-        </FullWidthCol>
+        <FullHeightCol flexGrow={2}>
+          {this.recipeDetailsComponent()}
+        </FullHeightCol>
 
-        <FullWidthCol flexGrow={1}>
-          <ShoppingListContainer />
-        </FullWidthCol>
+        <FullHeightCol flexGrow={1}>
+          <ShoppingListContainer/>
+        </FullHeightCol>
       </div>
-    )
+    );
   }
 }
+
+MainContainer.propTypes = {
+  isRecipeSelected: PropTypes.any,
+  selectedRecipeDetails: PropTypes.object
+};
 
 const stateToPropsMap = (state) => {
   return {
     isLoadingDetails: recipeSelectors.getRecipeStatus(state),
     selectedRecipeDetails: recipeSelectors.getRecipeDetails(state),
     isRecipeSelected: recipeSelectors.getIsSelectedRecipe(state)
-  }
+  };
 };
 
 export default connect(stateToPropsMap)(MainContainer);

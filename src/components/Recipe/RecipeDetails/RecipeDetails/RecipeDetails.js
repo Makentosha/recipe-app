@@ -1,5 +1,6 @@
 import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome/index'
+import PropTypes from 'prop-types';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome/index';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons/index';
 
 import recipeDetails from './RecipeDetails.css';
@@ -14,7 +15,7 @@ const RecipeDetails = (props) => {
               <FontAwesomeIcon className={recipeDetails.icon} icon={faCheckCircle}/>
               {ingredient}
             </li>
-          )
+          );
         })
       }
     </ul>
@@ -31,6 +32,10 @@ const RecipeDetails = (props) => {
       {ingredientsList}
     </React.Fragment>
   );
+};
+
+RecipeDetails.propTypes = {
+  recipeDetails: PropTypes.object
 };
 
 export default RecipeDetails;

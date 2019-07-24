@@ -1,5 +1,6 @@
 import React from 'react';
 import recipeStyles from './Recipe.css';
+import PropTypes from 'prop-types';
 
 const Recipe = (props) => (
   <div
@@ -17,5 +18,12 @@ const Recipe = (props) => (
     </div>
   </div>
 );
+
+Recipe.propTypes = {
+  clicked: PropTypes.func,
+  imgUrl: PropTypes.string,
+  text: PropTypes.string,
+  publisher: PropTypes.string
+};
 
 export default Recipe;

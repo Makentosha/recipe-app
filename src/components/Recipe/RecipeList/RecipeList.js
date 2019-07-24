@@ -1,5 +1,6 @@
 import React from 'react';
 import Recipe from './Recipe/Recipe';
+import PropTypes from 'prop-types';
 
 import RecipeExamples from './RecipeExamples/RecipeExamples';
 import Spinner from '../../../SharedComponents/Spinner/Spinner';
@@ -8,11 +9,11 @@ const RecipeList = (props) => {
   let recipes;
 
   if (props.isLoading) {
-    recipes = <Spinner />
+    recipes = <Spinner />;
   } else if (!props.recipes) {
-    recipes = <RecipeExamples onRecipeSearch={props.onRecipeSearch} />
+    recipes = <RecipeExamples onRecipeSearch={props.onRecipeSearch} />;
   } else if (!props.recipes.length) {
-    recipes = <h2>No recipe found</h2>
+    recipes = <h2>No recipe found</h2>;
   } else {
     recipes = props.recipes.map((recipe, index) => {
       return (
@@ -21,7 +22,7 @@ const RecipeList = (props) => {
           text={recipe.title}
           publisher={recipe.publisher}
           imgUrl={recipe.image_url}
-          clicked={e => props.recipeSelect(recipe)}/>
+          clicked={() => props.recipeSelect(recipe)}/>
       );
     });
   }
@@ -30,7 +31,14 @@ const RecipeList = (props) => {
     <React.Fragment>
       {recipes}
     </React.Fragment>
-  )
+  );
+};
+
+RecipeList.propTypes = {
+  isLoading: PropTypes.bool,
+  recipes: PropTypes.array,
+  onRecipeSearch: PropTypes.func,
+  recipeSelect: PropTypes.func
 };
 
 export default RecipeList;

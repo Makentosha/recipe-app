@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './RecipeExamples.css';
 
 const RecipeExamples = (props) => {
@@ -16,12 +18,16 @@ const RecipeExamples = (props) => {
                 onClick={() => props.onRecipeSearch(recipeName)}>
                 {recipeName}
               </li>
-            )
+            );
           })
         }
       </ul>
     </React.Fragment>
-  )
+  );
+};
+
+RecipeExamples.propTypes = {
+  onRecipeSearch: PropTypes.func
 };
 
 export default RecipeExamples;

@@ -40,7 +40,8 @@ const recipeReducer = (state, action) => {
         ...state,
         recipeDetails: {
           details: action.payload,
-          isLoading: false
+          isLoading: false,
+          isSelected: true
         }
       };
     case recipeActions.getRecipeDetailsError:

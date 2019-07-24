@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 
 import recipeReducer from './store/reducer';
-import initialState from "./store/initialState";
+import initialState from './store/initialState';
 
 
 const store = createStore(

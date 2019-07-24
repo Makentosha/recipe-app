@@ -1,5 +1,6 @@
-import axios from "axios";
-import {apiConfig} from "../config/api";
+import axios from 'axios';
+
+import {apiConfig} from '../config/api';
 
 const CancelToken = axios.CancelToken;
 let cancelPrevRequest;
@@ -13,8 +14,9 @@ export const getRecipes = (payload) => {
     'search',
     {
       params,
-      cancelToken: new CancelToken((c) => {cancelPrevRequest = c})
-    })
+      cancelToken: new CancelToken((c) => { cancelPrevRequest = c; })
+    }
+  );
 };
 
 export const getRecipeDetails = (payload) => {
@@ -26,6 +28,7 @@ export const getRecipeDetails = (payload) => {
     'get',
     {
       params,
-      cancelToken: new CancelToken((c) => {cancelPrevRequest = c})
-    })
+      cancelToken: new CancelToken((c) => { cancelPrevRequest = c; })
+    }
+  );
 };

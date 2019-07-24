@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './SearchInput.css';
 
 const SearchInput = (props) => {
@@ -9,7 +11,12 @@ const SearchInput = (props) => {
       type="text"
       value={props.value}
       onChange={props.onInput}/>
-  )
+  );
+};
+
+SearchInput.propTypes = {
+  value: PropTypes.string,
+  onInput: PropTypes.func
 };
 
 export default SearchInput;
