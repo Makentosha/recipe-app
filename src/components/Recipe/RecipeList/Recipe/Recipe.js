@@ -3,22 +3,29 @@ import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
-const Recipe = (props) => (
-  <div
+function Recipe(props) {
+  const {
+    clicked,
+    imgUrl,
+    text,
+    publisher
+  } = props;
+
+  return (<div
     className={styles.recipe}
-    onClick={props.clicked}>
+    onClick={clicked}>
     <img
-      src={props.imgUrl}
+      src={imgUrl}
       alt=""
       className={styles.foodImg}/>
     <div>
       <div className={styles.textContainer}>
-        <p className={styles.shortTitle}>{props.text}</p>
-        <p>{props.publisher}</p>
+        <p className={styles.shortTitle}>{text}</p>
+        <p>{publisher}</p>
       </div>
     </div>
-  </div>
-);
+  </div>);
+}
 
 Recipe.propTypes = {
   clicked: PropTypes.func,

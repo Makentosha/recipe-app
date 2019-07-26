@@ -6,20 +6,23 @@ import styles from './style.css';
 const RecipeExamples = (props) => {
   const recipes = ['Soup', 'Pasta', 'Pizza ', 'Burger', 'Sushi ', 'Salad', 'Cake'];
 
+  function handleClick(recipe) {
+    return () => {
+      props.onRecipeSearch(recipe);
+    };
+  }
+
   return (
     <React.Fragment>
       <h3 className={styles.heading}>Enter a recipe name</h3>
       <ul className={styles.recipes}>
         {
-          recipes.map((recipeName, index) => {
-            return (
-              <li
-                key={index}
-                onClick={() => props.onRecipeSearch(recipeName)}>
-                {recipeName}
-              </li>
-            );
-          })
+          recipes.map((recipeName, index) => (
+            <li
+              key={index}
+              onClick={handleClick(recipeName)}>
+              {recipeName}
+            </li>))
         }
       </ul>
     </React.Fragment>

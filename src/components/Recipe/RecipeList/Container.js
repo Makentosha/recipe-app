@@ -9,12 +9,15 @@ import RecipeList from './RecipeList';
 import SearchInput from 'components/shared/SearchInput/SearchInput';
 
 
-class RecipeListContainer extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       recipeSearchQuery: ''
     };
+
+    this.handleRecipeSearch = this.searchRecipe.bind(this);
+    this.handleRecipeSelect = this.selectRecipe.bind(this);
   }
 
   searchRecipe(query) {
@@ -24,7 +27,7 @@ class RecipeListContainer extends React.Component {
     }
   }
 
-  onRecipeSelect(recipe) {
+  selectRecipe(recipe) {
     this.props.fetchRecipeDetails(recipe.recipe_id);
   }
 
@@ -33,35 +36,38 @@ class RecipeListContainer extends React.Component {
       <React.Fragment>
         <h2 style={{paddingLeft: '42px', color: '#f69c84'}}>Recipes</h2>
         <SearchInput
-          onInput={(e) => this.searchRecipe(e.target.value)}
+          onInput={this.handleRecipeSearch}
           value={this.state.recipeSearchQuery}/>
         <RecipeList
           isLoading={this.props.isLoading}
           recipes={this.props.recipes}
-          recipeSelect={(recipe) => this.onRecipeSelect(recipe)}
-          onRecipeSearch={(query) => this.searchRecipe(query)}/>
+          onRecipeSearch={this.handleRecipeSearch}
+          recipeSelect={this.handleRecipeSelect}/>
       </React.Fragment>
     );
   }
 }
 
-RecipeListContainer.propTypes = {
+Container.propTypes = {
   fetchRecipeList: PropTypes.func,
   fetchRecipeDetails: PropTypes.any,
   isLoading: PropTypes.bool,
   recipes: PropTypes.array
 };
 
-const mapStoreToProps = (state) => {
+function mapStoreToProps(state) {
   return {
     recipes: recipeSelectors.getRecipeList(state),
     isLoading: recipeSelectors.getRecipeListStatus(state)
   };
-};
+}
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-  fetchRecipeList: recipeService.fetchRecipeList,
-  fetchRecipeDetails: recipeService.fetchRecipeDetails
-}, dispatch);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    fetchRecipeList: recipeService.fetchRecipeList,
+    fetchRecipeDetails: recipeService.fetchRecipeDetails
+  }, dispatch);
+}
 
-export default connect(mapStoreToProps, mapDispatchToProps)(RecipeListContainer);
+
+export default connect(mapStoreToProps, mapDispatchToProps)(Container);

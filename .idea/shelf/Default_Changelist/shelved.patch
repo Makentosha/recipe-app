@@ -1,0 +1,18 @@
+Index: src/layout/MainContainer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport styles from './MainContainer.css';\r\nimport {connect} from 'react-redux';\r\nimport PropTypes from 'prop-types';\r\n\r\nimport FullHeightCol from '../hoc/FullHeightCol';\r\nimport Keys from '../context/context';\r\nimport * as recipeSelectors from '../store/selectors';\r\nimport RecipeListContainer from '../components/Recipe/RecipeList/RecipeListContainer';\r\nimport ShoppingListContainer from '../components/ShoppingList/ShoppingListContainer';\r\nimport RecipeDetailsContainer\r\n  from '../components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer';\r\n\r\nclass MainContainer extends React.Component {\r\n  recipeDetailsComponent() {\r\n    if (this.props.isRecipeSelected) {\r\n      return <RecipeDetailsContainer\r\n        title=\"pizza\"\r\n        recipeDetails={this.props.selectedRecipeDetails}/>;\r\n    }\r\n\r\n    return <div/>;\r\n  }\r\n\r\n  render() {\r\n    return (\r\n      <div className={styles['main-container']}>\r\n        <FullHeightCol flexGrow={1}>\r\n          <Keys.Provider value={this.state}>\r\n            <RecipeListContainer/>\r\n          </Keys.Provider>\r\n        </FullHeightCol>\r\n\r\n        <FullHeightCol flexGrow={2}>\r\n          {this.recipeDetailsComponent()}\r\n        </FullHeightCol>\r\n\r\n        <FullHeightCol flexGrow={1}>\r\n          <ShoppingListContainer/>\r\n        </FullHeightCol>\r\n      </div>\r\n    );\r\n  }\r\n}\r\n\r\nMainContainer.propTypes = {\r\n  isRecipeSelected: PropTypes.any,\r\n  selectedRecipeDetails: PropTypes.object\r\n};\r\n\r\nconst mapStateToProps = (state) => {\r\n  return {\r\n    isLoadingDetails: recipeSelectors.getRecipeStatus(state),\r\n    selectedRecipeDetails: recipeSelectors.getRecipeDetails(state),\r\n    isRecipeSelected: recipeSelectors.getIsSelectedRecipe(state)\r\n  };\r\n};\r\n\r\nexport default connect(mapStateToProps)(MainContainer);\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/layout/MainContainer.js	(revision c8f6a3e5a4064fec2fc1b13f14550084f9da2a9a)
++++ src/layout/MainContainer.js	(date 1564140499327)
+@@ -6,7 +6,7 @@
+ import FullHeightCol from '../hoc/FullHeightCol';
+ import Keys from '../context/context';
+ import * as recipeSelectors from '../store/selectors';
+-import RecipeListContainer from '../components/Recipe/RecipeList/RecipeListContainer';
++import RecipeListContainer from '../components/Recipe/RecipeList/Container';
+ import ShoppingListContainer from '../components/ShoppingList/ShoppingListContainer';
+ import RecipeDetailsContainer
+   from '../components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer';

@@ -11,8 +11,10 @@ export const fetchRecipeList = (payload) => {
         dispatch(recipeActions.getRecipeListSuccess(res.data.recipes));
       })
       .catch(error => {
-        dispatch(recipeActions.getRecipeListError(error));
-        console.log(error);
+        if (error.message !== 'cancel') {
+          dispatch(recipeActions.getRecipeListError(error));
+          console.log(error);
+        }
       });
   };
 };
@@ -26,8 +28,10 @@ export const fetchRecipeDetails = (payload) => {
         dispatch(recipeActions.getRecipeDetailsSuccess(res.data.recipe));
       })
       .catch(error => {
-        dispatch(recipeActions.getRecipeDetailsError());
-        console.log(error);
+        if (error.message !== 'cancel') {
+          dispatch(recipeActions.getRecipeDetailsError());
+          console.log(error);
+        }
       });
   };
 };

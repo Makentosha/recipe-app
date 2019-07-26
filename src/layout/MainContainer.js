@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import FullHeightCol from '../hoc/FullHeightCol';
 import Keys from '../context/context';
 import * as recipeSelectors from '../store/selectors';
-import RecipeListContainer from '../components/Recipe/RecipeList/RecipeListContainer';
+import RecipeListContainer from '../components/Recipe/RecipeList/Container';
 import ShoppingListContainer from '../components/ShoppingList/ShoppingListContainer';
 import RecipeDetailsContainer
   from '../components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer';

@@ -5,34 +5,34 @@ import PropTypes from 'prop-types';
 import RecipeExamples from './RecipeExamples/RecipeExamples';
 import Spinner from 'components/shared/Spinner/Spinner';
 
-const RecipeList = (props) => {
-  let recipes;
+function RecipeList(props) {
+  const {isLoading, recipes, onRecipeSearch} = props;
 
-  if (props.isLoading) {
-    recipes = <Spinner />;
-  } else if (!props.recipes) {
-    recipes = <RecipeExamples onRecipeSearch={props.onRecipeSearch} />;
-  } else if (!props.recipes.length) {
-    recipes = <h2>No recipe found</h2>;
-  } else {
-    recipes = props.recipes.map((recipe, index) => {
-      return (
-        <Recipe
-          key={index}
-          text={recipe.title}
-          publisher={recipe.publisher}
-          imgUrl={recipe.image_url}
-          clicked={() => props.recipeSelect(recipe)}/>
-      );
-    });
+  if (isLoading) {
+    return <Spinner/>;
   }
 
-  return (
-    <React.Fragment>
-      {recipes}
-    </React.Fragment>
-  );
-};
+  if (!recipes) {
+    return <RecipeExamples onRecipeSearch={onRecipeSearch}/>;
+  }
+
+  if (!recipes.length) {
+    return <h2>No recipe found</h2>;
+  }
+
+  return recipes.map((recipe, index) => {
+    const handleRecipeSelect = () => props.recipeSelect(recipe);
+
+    return (
+      <Recipe
+        key={index}
+        text={recipe.title}
+        publisher={recipe.publisher}
+        imgUrl={recipe.image_url}
+        clicked={handleRecipeSelect}/>
+    );
+  });
+}
 
 RecipeList.propTypes = {
   isLoading: PropTypes.bool,

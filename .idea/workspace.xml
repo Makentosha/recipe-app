@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7ed1f74-890a-4ce1-8500-dfb81b7d2366" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeListContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recipe/RecipeList/Recipe/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recipe/RecipeList/Recipe/Recipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeExamples/RecipeExamples.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeExamples/RecipeExamples.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recipe/RecipeList/Container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/SearchInput/SearchInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/SearchInput/SearchInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/asyncComponent.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/MainContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/MainContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sideEffects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sideEffects.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,10 +29,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/shared/SearchInput/SearchInput.js">
+        <entry file="file://$PROJECT_DIR$/src/config/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="20">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/Container.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -34,10 +50,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeExamples/RecipeExamples.js">
+        <entry file="file://$PROJECT_DIR$/src/services/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
+            <state relative-caret-position="160">
+              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -55,69 +71,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layout/MainContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/store/sideEffects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+            <state relative-caret-position="320">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeDetails/RecipeContainerDetails/RecipeDetailsContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeListContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+            <state relative-caret-position="134">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/actions.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/layout/MainContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -175,6 +180,11 @@
             <path>
               <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="food-app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="food-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -189,23 +199,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Recipe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Recipe" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeDetails" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Recipe" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeDetails" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeContainerDetails" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
@@ -219,34 +212,13 @@
               <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="food-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchInput" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="food-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="food-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -290,11 +262,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5282000" />
+    <option name="totallyTimeSpent" value="5379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992764" visible="true" weight="0.20495258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -308,7 +279,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.2909699" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.43255296" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -360,8 +331,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="60">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -483,16 +454,6 @@
         <state relative-caret-position="-39" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeExamples/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -556,8 +517,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/MainContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+        <state relative-caret-position="227">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -574,10 +535,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeListContainer.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeListContainer.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/Container.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        <state relative-caret-position="1320">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Recipe/RecipeList/RecipeList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

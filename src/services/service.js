@@ -6,7 +6,7 @@ const CancelToken = axios.CancelToken;
 let cancelPrevRequest;
 
 export const getRecipes = (payload) => {
-  cancelPrevRequest && cancelPrevRequest('search request was canceled');
+  cancelPrevRequest && cancelPrevRequest('cancel');
 
   const params = {key: apiConfig.keys[0], q: payload};
 
@@ -20,7 +20,7 @@ export const getRecipes = (payload) => {
 };
 
 export const getRecipeDetails = (payload) => {
-  cancelPrevRequest && cancelPrevRequest('search request was canceled');
+  cancelPrevRequest && cancelPrevRequest('cancel');
 
   const params = {key: apiConfig.keys[0], rId: payload};
 
