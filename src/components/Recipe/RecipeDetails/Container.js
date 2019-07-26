@@ -4,26 +4,28 @@ import PropTypes from 'prop-types';
 
 import * as recipeSelectors from 'store/selectors';
 import Spinner from 'components/shared/Spinner/Spinner';
-import RecipeDetails from '../RecipeDetails/RecipeDetails';
+import RecipeDetails from './RecipeDetails/RecipeDetails';
 
-class RecipeDetailsContainer extends React.Component {
+class Container extends React.Component {
   render() {
-    return this.props.isLoading
+    const {isLoading, recipeDetails} = this.props;
+
+    return isLoading
       ? (<Spinner/>)
-      : (<RecipeDetails recipeDetails={this.props.recipeDetails}/>);
+      : (<RecipeDetails {...recipeDetails}/>);
   }
 }
 
-RecipeDetailsContainer.propTypes = {
+Container.propTypes = {
   isLoading: PropTypes.bool,
   recipeDetails: PropTypes.object
 };
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     recipeDetails: recipeSelectors.getRecipeDetails(state),
     isLoading: recipeSelectors.getRecipeStatus(state)
   };
-};
+}
 
-export default connect(mapStateToProps)(RecipeDetailsContainer);
+export default connect(mapStateToProps)(Container);

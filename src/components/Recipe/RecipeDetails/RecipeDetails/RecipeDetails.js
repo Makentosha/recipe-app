@@ -5,18 +5,22 @@ import {faCheckCircle} from '@fortawesome/free-solid-svg-icons/index';
 
 import styles from './style.css';
 
-const RecipeDetails = (props) => {
+function RecipeDetails(props) {
+  const {
+    ingredients,
+    title,
+    publisher
+  } = props;
+
   const ingredientsList = (
     <ul className={styles['ingredients-list']}>
       {
-        props.recipeDetails.ingredients.map((ingredient, index) => {
-          return (
-            <li key={index}>
-              <FontAwesomeIcon className={styles.icon} icon={faCheckCircle}/>
-              {ingredient}
-            </li>
-          );
-        })
+        ingredients.map((ingredient, index) => (
+          <li key={index}>
+            <FontAwesomeIcon className={styles.icon} icon={faCheckCircle}/>
+            {ingredient}
+          </li>
+        ))
       }
     </ul>
   );
@@ -25,17 +29,20 @@ const RecipeDetails = (props) => {
     <React.Fragment>
       <img
         className={styles.recipeImg}
-        src={props.recipeDetails.image_url}
-        alt=""/>
-      <h1 className={styles.title}>{props.recipeDetails.title}</h1>
-      <h3 className={styles.author}>Author: {props.recipeDetails.publisher}</h3>
+        src={props.image_url}
+        alt={title}/>
+      <h1 className={styles.title}>{title}</h1>
+      <h3 className={styles.author}>Author: {publisher}</h3>
       {ingredientsList}
     </React.Fragment>
   );
-};
+}
 
 RecipeDetails.propTypes = {
-  recipeDetails: PropTypes.object
+  ingredients: PropTypes.array,
+  image_url: PropTypes.string,
+  title: PropTypes.string,
+  publisher: PropTypes.string
 };
 
 export default RecipeDetails;

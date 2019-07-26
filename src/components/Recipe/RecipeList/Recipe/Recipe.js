@@ -16,7 +16,7 @@ function Recipe(props) {
     onClick={clicked}>
     <img
       src={imgUrl}
-      alt=""
+      alt={text}
       className={styles.foodImg}/>
     <div>
       <div className={styles.textContainer}>
