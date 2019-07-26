@@ -19,11 +19,11 @@ RecipeDetailsContainer.propTypes = {
   recipeDetails: PropTypes.object
 };
 
-const StateToPropsMap = (state) => {
+const mapStateToProps = (state) => {
   return {
     recipeDetails: recipeSelectors.getRecipeDetails(state),
     isLoading: recipeSelectors.getRecipeStatus(state)
   };
 };
 
-export default connect(StateToPropsMap)(RecipeDetailsContainer);
+export default connect(mapStateToProps)(RecipeDetailsContainer);

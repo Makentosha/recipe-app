@@ -48,7 +48,7 @@ MainContainer.propTypes = {
   selectedRecipeDetails: PropTypes.object
 };
 
-const stateToPropsMap = (state) => {
+const mapStateToProps = (state) => {
   return {
     isLoadingDetails: recipeSelectors.getRecipeStatus(state),
     selectedRecipeDetails: recipeSelectors.getRecipeDetails(state),
@@ -56,4 +56,4 @@ const stateToPropsMap = (state) => {
   };
 };
 
-export default connect(stateToPropsMap)(MainContainer);
+export default connect(mapStateToProps)(MainContainer);

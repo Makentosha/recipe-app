@@ -52,16 +52,16 @@ RecipeListContainer.propTypes = {
   recipes: PropTypes.array
 };
 
-const storeToPropsMap = (state) => {
+const mapStoreToProps = (state) => {
   return {
     recipes: recipeSelectors.getRecipeList(state),
     isLoading: recipeSelectors.getRecipeListStatus(state)
   };
 };
 
-const dispatchToPropsMap = (dispatch) => bindActionCreators({
+const mapDispatchToProps = (dispatch) => bindActionCreators({
   fetchRecipeList: recipeService.fetchRecipeList,
   fetchRecipeDetails: recipeService.fetchRecipeDetails
 }, dispatch);
 
-export default connect(storeToPropsMap, dispatchToPropsMap)(RecipeListContainer);
+export default connect(mapStoreToProps, mapDispatchToProps)(RecipeListContainer);
