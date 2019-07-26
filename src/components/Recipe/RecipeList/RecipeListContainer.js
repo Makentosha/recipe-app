@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 
-import * as recipeSelectors from '../../../store/selectors';
-import * as recipeService from '../../../store/sideEffects';
+import * as recipeSelectors from 'store/selectors';
+import * as recipeService from 'store/sideEffects';
 import RecipeList from './RecipeList';
-import SearchInput from '../../../SharedComponents/SearchInput/SearchInput';
-import {bindActionCreators} from 'redux';
+import SearchInput from 'components/shared/SearchInput/SearchInput';
 
 
 class RecipeListContainer extends React.Component {

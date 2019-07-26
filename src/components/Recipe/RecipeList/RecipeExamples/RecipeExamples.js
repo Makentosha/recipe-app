@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './RecipeExamples.css';
+import styles from './style.css';
 
 const RecipeExamples = (props) => {
   const recipes = ['Soup', 'Pasta', 'Pizza ', 'Burger', 'Sushi ', 'Salad', 'Cake'];

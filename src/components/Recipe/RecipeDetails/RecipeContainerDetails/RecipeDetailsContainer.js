@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import * as recipeSelectors from '../../../../store/selectors';
+import * as recipeSelectors from 'store/selectors';
+import Spinner from 'components/shared/Spinner/Spinner';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
-import Spinner from '../../../../SharedComponents/Spinner/Spinner';
 
 class RecipeDetailsContainer extends React.Component {
   render() {

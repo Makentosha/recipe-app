@@ -1,18 +1,19 @@
 import React from 'react';
-import recipeStyles from './Recipe.css';
 import PropTypes from 'prop-types';
+
+import styles from './style.css';
 
 const Recipe = (props) => (
   <div
-    className={recipeStyles.recipe}
+    className={styles.recipe}
     onClick={props.clicked}>
     <img
       src={props.imgUrl}
       alt=""
-      className={recipeStyles.foodImg}/>
+      className={styles.foodImg}/>
     <div>
-      <div className={recipeStyles.textContainer}>
-        <p className={recipeStyles.shortTitle}>{props.text}</p>
+      <div className={styles.textContainer}>
+        <p className={styles.shortTitle}>{props.text}</p>
         <p>{props.publisher}</p>
       </div>
     </div>

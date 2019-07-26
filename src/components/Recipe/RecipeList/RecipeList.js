@@ -3,7 +3,7 @@ import Recipe from './Recipe/Recipe';
 import PropTypes from 'prop-types';
 
 import RecipeExamples from './RecipeExamples/RecipeExamples';
-import Spinner from '../../../SharedComponents/Spinner/Spinner';
+import Spinner from 'components/shared/Spinner/Spinner';
 
 const RecipeList = (props) => {
   let recipes;
