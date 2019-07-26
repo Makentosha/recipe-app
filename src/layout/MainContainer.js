@@ -1,42 +1,32 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import FullHeightCol from 'hoc/FullHeightCol';
 
 import styles from './MainContainer.css';
-import Keys from 'context/context';
 import * as recipeSelectors from 'store/selectors';
 import RecipeListContainer from 'components/Recipe/RecipeList/Container';
 import ShoppingListContainer from 'components/ShoppingList/ShoppingListContainer';
 import RecipeDetailsContainer from 'components/Recipe/RecipeDetails/Container';
 
 class MainContainer extends React.Component {
-  recipeDetailsComponent() {
-    if (this.props.isRecipeSelected) {
-      return <RecipeDetailsContainer
-        title="pizza"
-        recipeDetails={this.props.selectedRecipeDetails}/>;
-    }
-
-    return <div/>;
-  }
-
   render() {
+    const {selectedRecipeDetails, isRecipeSelected} = this.props;
+
+    const RecipeDetails = <RecipeDetailsContainer recipeDetails={selectedRecipeDetails}/>;
+
     return (
       <div className={styles['main-container']}>
-        <FullHeightCol flexGrow={1}>
-          <Keys.Provider value={this.state}>
-            <RecipeListContainer/>
-          </Keys.Provider>
-        </FullHeightCol>
+        <div className={styles.column} style={{width: '25%'}}>
+          <RecipeListContainer/>
+        </div>
 
-        <FullHeightCol flexGrow={2}>
-          {this.recipeDetailsComponent()}
-        </FullHeightCol>
+        <div className={styles.column} style={{width: '50%'}}>
+          {isRecipeSelected ? RecipeDetails : null}
+        </div>
 
-        <FullHeightCol flexGrow={1}>
+        <div className={styles.column} style={{width: '25%'}}>
           <ShoppingListContainer/>
-        </FullHeightCol>
+        </div>
       </div>
     );
   }
@@ -47,12 +37,12 @@ MainContainer.propTypes = {
   selectedRecipeDetails: PropTypes.object
 };
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     isLoadingDetails: recipeSelectors.getRecipeStatus(state),
     selectedRecipeDetails: recipeSelectors.getRecipeDetails(state),
     isRecipeSelected: recipeSelectors.getIsSelectedRecipe(state)
   };
-};
+}
 
 export default connect(mapStateToProps)(MainContainer);
