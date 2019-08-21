@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './MainContainer.css';
 import * as recipeSelectors from 'store/selectors';
 import RecipeListContainer from 'components/Recipe/RecipeList/Container';
-import ShoppingListContainer from 'components/ShoppingList/ShoppingListContainer';
+import ShoppingListContainer from 'components/RecipeForm/Container';
 import RecipeDetailsContainer from 'components/Recipe/RecipeDetails/Container';
 
 class MainContainer extends React.Component {

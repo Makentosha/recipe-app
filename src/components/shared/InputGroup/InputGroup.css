@@ -1,0 +1,35 @@
+.input-group {
+    display: flex;
+    color: orange;
+    border-radius: 3px;
+}
+
+.input-group > input {
+    flex: 1 1 auto;
+    width: 270px;
+    padding: 7px 7px 7px 14px;
+    border: 1px solid #a7a7a7;
+    border-right: 0;
+    border-radius: 3px 0 0 3px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #f59783;
+}
+
+.input-group > button {
+    width: 34px;
+    border: 1px solid #f9c387;
+    border-left: 0;
+    border-radius: 0 3px 3px 0;
+    color: white;
+    background-color: #ffbd75;
+}
+
+.input-group > button:disabled {
+    border-color: #a7a7a7;
+    background-color: #a7a7a7;
+}
+
+.input-group > button:focus {
+    outline: none;
+}

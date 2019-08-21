@@ -1,0 +1,39 @@
+.title {
+    margin-bottom: 3px;
+    color: #b1b1b1;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.shopping-list {
+    margin: 0 15px;
+    padding: 0;
+    color: #f69c84;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.shopping-list-item {
+    padding: 9px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-list-item:hover .icon {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.icon {
+    visibility: hidden;
+    margin: 0 7px;
+    font-size: 12px;
+}
+
+.danger {
+    color: gray;
+}
+
+.danger:hover {
+    color: #cb0700;
+}

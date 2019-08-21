@@ -1,0 +1,20 @@
+.input-container {
+    width: 100%;
+    margin: 7px 0;
+}
+
+.input {
+    padding: 7px;
+    border: 1px solid #a7a7a7;
+    color: #f59783;
+    border-radius: 3px;
+    width: 270px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.label {
+    color: #b1b1b1;
+    font-weight: bold;
+    padding-left: 8px;
+}
