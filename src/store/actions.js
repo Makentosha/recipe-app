@@ -39,3 +39,17 @@ export const getRecipeDetailsError = () => {
     type: actionTypes.getRecipeDetails
   };
 };
+
+export const saveRecipe = (payload) => {
+  return {
+    type: actionTypes.saveRecipe,
+    payload
+  };
+};
+
+
+export const saveRecipeSuccess = () => {
+  return {
+    type: actionTypes.saveRecipeSuccess
+  };
+};

@@ -1,12 +1,12 @@
 import React from 'react';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 
-import Input from '../../shared/Input/Input';
+import Input from 'components/shared/Input/Input';
 import IngredientList from '../IngredientList/IngredientList';
-import InputGroup from '../../shared/InputGroup/InputGroup';
+import InputGroup from 'components/shared/InputGroup/InputGroup';
 import styles from './RecipeForm.css';
 import PropTypes from 'prop-types';
-
+import Spinner from 'components/shared/Spinner/Spinner';
 
 class RecipeForm extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class RecipeForm extends React.Component {
           title: 'Title',
           value: ''
         },
-        author: {
+        publisher: {
           type: 'text',
           title: 'Author',
           value: ''
@@ -100,8 +100,6 @@ class RecipeForm extends React.Component {
     });
   }
 
-
-
   submitForm(event) {
     event.preventDefault();
 
@@ -111,6 +109,7 @@ class RecipeForm extends React.Component {
       formValue[key] = this.state.recipeForm[key].value;
     });
 
+    delete formValue.ingredient;
     this.props.formSubmit(formValue);
   }
 
@@ -149,15 +148,22 @@ class RecipeForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleFormSubmit} style={{margin: '12px'}}>
-        {this.renderForm()}
-        <button className={styles['submit-button']}>Save</button>
+        <fieldset disabled={this.props.isLoading}>
+          { this.renderForm() }
+          {
+            this.props.isLoading
+              ? <Spinner/>
+              : <button className={styles['submit-button']}>Save</button>
+          }
+        </fieldset>
       </form>
     );
   }
 }
 
 RecipeForm.propTypes = {
-  formSubmit: PropTypes.func
+  formSubmit: PropTypes.func,
+  isLoading: PropTypes.bool
 };
 
 

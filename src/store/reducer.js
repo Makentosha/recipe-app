@@ -52,6 +52,20 @@ const recipeReducer = (state, action) => {
           isLoading: false
         }
       };
+    case recipeActions.saveRecipe:
+      return {
+        ...state,
+        recipeForm: {
+          isLoading: true
+        }
+      };
+    case recipeActions.saveRecipeSuccess:
+      return {
+        ...state,
+        recipeForm: {
+          isLoading: false
+        }
+      };
     default:
       return state;
   }

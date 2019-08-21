@@ -6,6 +6,9 @@ const initialState = {
   recipeDetails: {
     details: null,
     isLoading: false
+  },
+  recipeForm: {
+    isLoading: false
   }
 };
 

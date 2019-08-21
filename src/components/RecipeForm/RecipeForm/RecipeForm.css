@@ -1,3 +1,7 @@
+fieldset {
+    border: 0;
+}
+
 .icon {
     font-size: 21px;
     color: rgb(246, 156, 132);
