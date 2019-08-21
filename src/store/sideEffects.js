@@ -1,9 +1,9 @@
 import * as recipeActions from './actions';
 
-import {getRecipeDetails, getRecipes} from '../services/service';
+import {getRecipeDetails, getRecipes, saveRecipe} from '../services/service';
 
 export const fetchRecipeList = (payload) => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(recipeActions.getRecipeList());
 
     getRecipes(payload)
@@ -20,7 +20,7 @@ export const fetchRecipeList = (payload) => {
 };
 
 export const fetchRecipeDetails = (payload) => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(recipeActions.getRecipeDetails());
 
     getRecipeDetails(payload)
@@ -32,6 +32,17 @@ export const fetchRecipeDetails = (payload) => {
           dispatch(recipeActions.getRecipeDetailsError());
           console.log(error);
         }
+      });
+  };
+};
+
+export const saveRecipeDetails = (payload) => {
+  return (dispatch) => {
+    dispatch(recipeActions.saveRecipe());
+
+    saveRecipe(payload)
+      .then(() => {
+        dispatch(recipeActions.saveRecipeSuccess());
       });
   };
 };
