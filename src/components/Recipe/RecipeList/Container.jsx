@@ -1,7 +1,10 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router';
+import queryString from 'query-string';
 
 import * as recipeSelectors from 'store/selectors';
 import * as recipeService from 'store/sideEffects';
@@ -12,16 +15,24 @@ import SearchInput from 'components/shared/SearchInput/SearchInput';
 class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      recipeSearchQuery: ''
-    };
 
     this.handleRecipeSearch = this.searchRecipe.bind(this);
     this.handleRecipeSelect = this.selectRecipe.bind(this);
+
+    this.renderSearchInput = () => {
+      return <SearchInput onInput={this.handleRecipeSearch}/>;
+    };
+  }
+
+  componentDidMount() {
+    const {query} = queryString.parse(this.props.location.search);
+
+    if (query) {
+      this.searchRecipe(query);
+    }
   }
 
   searchRecipe(query) {
-    this.setState({recipeSearchQuery: query});
     if (query.length >= 3) {
       this.props.fetchRecipeList(query);
     }
@@ -35,9 +46,9 @@ class Container extends React.Component {
     return (
       <React.Fragment>
         <h2 style={{paddingLeft: '42px', color: '#f69c84'}}>Recipes</h2>
-        <SearchInput
-          onInput={this.handleRecipeSearch}
-          value={this.state.recipeSearchQuery}/>
+        <Route
+          path="/search"
+          render={this.renderSearchInput}/>
         <RecipeList
           isLoading={this.props.isLoading}
           recipes={this.props.recipes}
@@ -52,7 +63,8 @@ Container.propTypes = {
   fetchRecipeList: PropTypes.func,
   fetchRecipeDetails: PropTypes.any,
   isLoading: PropTypes.bool,
-  recipes: PropTypes.array
+  recipes: PropTypes.array,
+  location: PropTypes.object
 };
 
 function mapStoreToProps(state) {
@@ -70,4 +82,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStoreToProps, mapDispatchToProps)(Container);
+export default connect(mapStoreToProps, mapDispatchToProps)(withRouter(Container));
