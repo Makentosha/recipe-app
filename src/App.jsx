@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 
@@ -18,7 +19,7 @@ axios.interceptors.response.use((res) => {
 function App() {
   return (
     <BrowserRouter>
-      <MainContainer/>
+        <Route path='/:selected' component={MainContainer}/>
     </BrowserRouter>);
 }
 

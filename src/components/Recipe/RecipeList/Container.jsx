@@ -8,9 +8,10 @@ import queryString from 'query-string';
 
 import * as recipeSelectors from 'store/selectors';
 import * as recipeService from 'store/sideEffects';
-import RecipeList from './RecipeList';
 import SearchInput from 'components/shared/SearchInput/SearchInput';
 
+import ListHeader from './ListHeader/ListHeader';
+import RecipeList from './RecipeList';
 
 class Container extends React.Component {
   constructor(props) {
@@ -45,9 +46,11 @@ class Container extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h2 style={{paddingLeft: '42px', color: '#f69c84'}}>Recipes</h2>
+        <ListHeader
+          title='search'
+          selected={this.props.match.params.section}/>
         <Route
-          path="/search"
+          path='/search'
           render={this.renderSearchInput}/>
         <RecipeList
           isLoading={this.props.isLoading}
@@ -64,7 +67,8 @@ Container.propTypes = {
   fetchRecipeDetails: PropTypes.any,
   isLoading: PropTypes.bool,
   recipes: PropTypes.array,
-  location: PropTypes.object
+  location: PropTypes.object,
+  match: PropTypes.object
 };
 
 function mapStoreToProps(state) {

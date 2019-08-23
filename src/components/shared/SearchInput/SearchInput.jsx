@@ -16,8 +16,6 @@ function SearchInput(props) {
 
     props.history.push(routeObject);
     props.onInput(e.target.value);
-
-    console.log(props);
   }
 
   return (

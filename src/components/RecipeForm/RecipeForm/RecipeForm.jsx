@@ -83,7 +83,6 @@ class RecipeForm extends React.Component {
   }
 
   removeIngredient(indexToRemove) {
-    console.log(indexToRemove);
     const ingredients = this.state.recipeForm.ingredients.value;
 
     ingredients.splice(indexToRemove, 1);
