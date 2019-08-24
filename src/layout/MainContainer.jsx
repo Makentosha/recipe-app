@@ -2,13 +2,20 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import styles from './MainContainer.css';
 import * as recipeSelectors from 'store/selectors';
 import RecipeListContainer from 'components/Recipe/RecipeList/Container';
 import ShoppingListContainer from 'components/RecipeForm/Container';
 import RecipeDetailsContainer from 'components/Recipe/RecipeDetails/Container';
 
+import styles from './MainContainer.css';
+
 class MainContainer extends React.Component {
+  componentDidMount() {
+    if (this.props.match.url === '/') {
+      this.props.history.push('/search');
+    }
+  }
+
   render() {
     const {selectedRecipeDetails, isRecipeSelected} = this.props;
 
@@ -34,7 +41,9 @@ class MainContainer extends React.Component {
 
 MainContainer.propTypes = {
   isRecipeSelected: PropTypes.any,
-  selectedRecipeDetails: PropTypes.object
+  selectedRecipeDetails: PropTypes.object,
+  history: PropTypes.object,
+  match: PropTypes.object
 };
 
 function mapStateToProps(state) {

@@ -1,12 +1,13 @@
 import React from 'react';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 import Input from 'components/shared/Input/Input';
-import IngredientList from '../IngredientList/IngredientList';
-import InputGroup from 'components/shared/InputGroup/InputGroup';
-import styles from './RecipeForm.css';
-import PropTypes from 'prop-types';
 import Spinner from 'components/shared/Spinner/Spinner';
+
+import InputGroup from 'components/shared/InputGroup/InputGroup';
+import IngredientList from '../IngredientList/IngredientList';
+import styles from './RecipeForm.css';
 
 class RecipeForm extends React.Component {
   constructor(props) {
@@ -83,7 +84,6 @@ class RecipeForm extends React.Component {
   }
 
   removeIngredient(indexToRemove) {
-    console.log(indexToRemove);
     const ingredients = this.state.recipeForm.ingredients.value;
 
     ingredients.splice(indexToRemove, 1);

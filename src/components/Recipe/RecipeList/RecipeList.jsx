@@ -1,9 +1,10 @@
 import React from 'react';
-import Recipe from './Recipe/Recipe';
 import PropTypes from 'prop-types';
 
-import RecipeExamples from './RecipeExamples/RecipeExamples';
 import Spinner from 'components/shared/Spinner/Spinner';
+
+import Recipe from './Recipe/Recipe';
+import RecipeExamples from './RecipeExamples/RecipeExamples';
 
 function RecipeList(props) {
   const {isLoading, recipes, onRecipeSearch} = props;
@@ -21,7 +22,7 @@ function RecipeList(props) {
   }
 
   return recipes.map((recipe, index) => {
-    const handleRecipeSelect = () => props.recipeSelect(recipe);
+    const handleRecipeSelect = () => props.onRecipeSelect(recipe);
 
     return (
       <Recipe
@@ -38,7 +39,7 @@ RecipeList.propTypes = {
   isLoading: PropTypes.bool,
   recipes: PropTypes.array,
   onRecipeSearch: PropTypes.func,
-  recipeSelect: PropTypes.func
+  onRecipeSelect: PropTypes.func
 };
 
 export default RecipeList;

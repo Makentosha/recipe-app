@@ -1,9 +1,11 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
-import './App.css';
+import {Route} from 'react-router-dom';
 import axios from 'axios';
-
+import {Redirect} from 'react-router-dom';
+import './App.css';
 import MainContainer from './layout/MainContainer';
+import {Switch} from 'react-router';
 
 axios.defaults.baseURL = 'https://www.food2fork.com/api/';
 
@@ -18,7 +20,10 @@ axios.interceptors.response.use((res) => {
 function App() {
   return (
     <BrowserRouter>
-      <MainContainer/>
+      <Switch>
+        <Route path='/:selected' component={MainContainer}/>
+        <Redirect from='/' to='/search'/>
+      </Switch>
     </BrowserRouter>);
 }
 

@@ -1,0 +1,22 @@
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    color: #f69c84;
+    padding: 0 32px;
+}
+
+.nav-item {
+    color: #f69c84;
+}
+
+.nav-item:visited {
+    color: #f69c84;
+}
+
+.icon {
+    margin: 30px 10px;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
