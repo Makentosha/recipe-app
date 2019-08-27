@@ -8,3 +8,8 @@ export const getRecipeDetailsError = 'GET_RECIPE_ERROR';
 
 export const saveRecipe = 'SAVE_RECIPE';
 export const saveRecipeSuccess = 'SAVE_RECIPE_SUCCESS';
+
+export const getMyRecipes = 'GET_MY_RECIPES';
+export const getMyRecipesSuccess = 'GET_MY_RECIPES_SUCCESS';
+
+export const clearRecipeList = 'CLEAR_RECIPE_LIST';

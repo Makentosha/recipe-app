@@ -20,7 +20,7 @@ class ListHeader extends React.Component {
   componentDidMount() {
     const {headerMap, props} = this;
 
-    if (!headerMap[props.selected]) {
+    if (!headerMap[props.selectedRecipeList]) {
       props.history.replace('/search');
     }
   }
@@ -30,7 +30,7 @@ class ListHeader extends React.Component {
 
     return (
       <div className={styles['list-header']}>
-        <h2>{headerMap[props.selected]}</h2>
+        <h2>{headerMap[props.selectedRecipeList]}</h2>
         <div>
           <Link to='/my-recipes' className={styles['nav-item']}>
             <FontAwesomeIcon icon={faStar} className={styles.icon}/>
@@ -50,7 +50,7 @@ class ListHeader extends React.Component {
 ListHeader.propTypes = {
   history: PropTypes.object,
   match: PropTypes.object,
-  selected: PropTypes.string
+  selectedRecipeList: PropTypes.string
 };
 
 export default withRouter(ListHeader);

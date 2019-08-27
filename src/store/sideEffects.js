@@ -1,12 +1,13 @@
-import * as recipeActions from './actions';
+import uuid from 'uuid/v4';
 
-import {getRecipeDetails, getRecipes, saveRecipe} from '../services/service';
+import * as recipeActions from './actions';
+import * as recipeService from '../services/service';
 
 export const fetchRecipeList = (payload) => {
   return (dispatch) => {
     dispatch(recipeActions.getRecipeList());
 
-    getRecipes(payload)
+    recipeService.getRecipes(payload)
       .then((res) => {
         dispatch(recipeActions.getRecipeListSuccess(res.data.recipes));
       })
@@ -19,11 +20,22 @@ export const fetchRecipeList = (payload) => {
   };
 };
 
+export const fetchMyRecipesList = () => {
+  return (dispatch) => {
+    dispatch(recipeActions.getMyRecipes());
+
+    recipeService.getMyRecipes()
+      .then((res) => {
+        dispatch(recipeActions.getMyRecipesSuccess(res));
+      });
+  };
+};
+
 export const fetchRecipeDetails = (payload) => {
   return (dispatch) => {
     dispatch(recipeActions.getRecipeDetails());
 
-    getRecipeDetails(payload)
+    recipeService.getRecipeDetails(payload)
       .then(res => {
         dispatch(recipeActions.getRecipeDetailsSuccess(res.data.recipe));
       })
@@ -40,7 +52,10 @@ export const saveRecipeDetails = (payload) => {
   return (dispatch) => {
     dispatch(recipeActions.saveRecipe());
 
-    saveRecipe(payload)
+    const recipe = payload;
+    recipe.recipe_id = uuid();
+
+    recipeService.saveRecipe(recipe)
       .then(() => {
         dispatch(recipeActions.saveRecipeSuccess());
       });

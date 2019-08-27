@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/:selected' component={MainContainer}/>
+        <Route path='/:selectedRecipeList' component={MainContainer}/>
         <Redirect from='/' to='/search'/>
       </Switch>
     </BrowserRouter>);

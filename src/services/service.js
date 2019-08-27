@@ -45,3 +45,13 @@ export const saveRecipe = (payload) => {
     }, 500);
   });
 };
+
+export const getMyRecipes = () => {
+  const myRecipes = JSON.parse(localStorage.getItem('localRecipes'));
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(myRecipes);
+    }, 500);
+  });
+};

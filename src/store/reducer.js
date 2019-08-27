@@ -22,6 +22,7 @@ const recipeReducer = (state, action) => {
       return {
         ...state,
         recipeList: {
+          ...state.recipeDetails,
           recipes: action.payload,
           isLoading: false
         }
@@ -64,6 +65,30 @@ const recipeReducer = (state, action) => {
         ...state,
         recipeForm: {
           isLoading: false
+        }
+      };
+    case recipeActions.getMyRecipes:
+      return {
+        ...state,
+        recipeList: {
+          ...state.recipeList.recipes,
+          isLoading: true
+        }
+      };
+    case recipeActions.getMyRecipesSuccess:
+      return {
+        ...state,
+        recipeList: {
+          recipes: action.payload,
+          isLoading: false
+        }
+      };
+    case recipeActions.clearRecipeList:
+      return {
+        ...state,
+        recipeList: {
+          ...state.recipeList,
+          recipes: null
         }
       };
     default:

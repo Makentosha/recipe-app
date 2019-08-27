@@ -47,9 +47,27 @@ export const saveRecipe = (payload) => {
   };
 };
 
-
 export const saveRecipeSuccess = () => {
   return {
     type: actionTypes.saveRecipeSuccess
+  };
+};
+
+export const getMyRecipes = () => {
+  return {
+    type: actionTypes.getMyRecipes
+  };
+};
+
+export const getMyRecipesSuccess = (payload) => {
+  return {
+    type: actionTypes.getMyRecipesSuccess,
+    payload
+  };
+};
+
+export const clearRecipeList = () => {
+  return {
+    type: actionTypes.getMyRecipesSuccess
   };
 };
